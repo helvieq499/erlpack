@@ -8,5 +8,6 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 byteorder = "1.4.3"
+js-sys = "0.3.64"
 num-bigint = "0.4.3"
 wasm-bindgen = "0.2.87"
