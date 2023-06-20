@@ -10,3 +10,13 @@ pub enum Term {
     List(Vec<Term>, Option<Box<Term>>),
     Binary(Vec<u8>),
 }
+
+impl Term {
+    pub fn from_bytes(bytes: &[u8]) -> crate::Result<Self> {
+        todo!();
+    }
+
+    pub fn to_bytes(&self) -> Vec<u8> {
+        todo!();
+    }
+}

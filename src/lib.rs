@@ -7,9 +7,9 @@ mod error;
 pub use error::{Error, Result};
 
 pub fn unpack(bytes: &[u8]) -> Result<Term> {
-    todo!()
+    Term::from_bytes(bytes)
 }
 
 pub fn pack(term: Term) -> Vec<u8> {
-    todo!()
+    term.to_bytes()
 }
