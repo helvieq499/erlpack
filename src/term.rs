@@ -13,7 +13,7 @@ pub enum Term {
 
 impl Term {
     pub fn from_bytes(bytes: &[u8]) -> crate::Result<Self> {
-        todo!();
+        crate::reader::Reader::new(bytes).read()
     }
 
     pub fn to_bytes(&self) -> Vec<u8> {

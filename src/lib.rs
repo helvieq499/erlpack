@@ -6,6 +6,8 @@ pub use term::Term;
 mod error;
 pub use error::{Error, Result};
 
+mod reader;
+
 pub fn unpack(bytes: &[u8]) -> Result<Term> {
     Term::from_bytes(bytes)
 }
