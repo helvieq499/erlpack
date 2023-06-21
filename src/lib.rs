@@ -1,4 +1,5 @@
 #![warn(clippy::cargo, clippy::nursery, clippy::pedantic)]
+#![allow(clippy::missing_errors_doc, clippy::missing_panics_doc)]
 
 mod term;
 pub use term::Term;
@@ -12,6 +13,7 @@ pub fn unpack(bytes: &[u8]) -> Result<Term> {
     Term::from_bytes(bytes)
 }
 
-pub fn pack(term: Term) -> Vec<u8> {
+#[must_use]
+pub fn pack(term: &Term) -> Vec<u8> {
     term.to_bytes()
 }

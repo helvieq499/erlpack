@@ -45,7 +45,7 @@ impl<'a> Reader<'a> {
                 Ok(Term::Integer(BigInt::from_bytes_le(sign, &buf)))
             }
 
-            70 => Ok(Term::Float(self.data.read_f64::<BigEndian>()?.into())),
+            70 => Ok(Term::Float(self.data.read_f64::<BigEndian>()?)),
             // TODO: type 99, FLOAT_EXT
             115 | 119 => {
                 let size = self.data.read_u8()?;
@@ -109,7 +109,7 @@ impl<'a> Reader<'a> {
                 Ok(Term::Binary(self.read_buffer(size as usize)?))
             }
 
-            x => return Err(Error::UnknownTermType(x)),
+            x => Err(Error::UnknownTermType(x)),
         }
     }
 
@@ -120,7 +120,7 @@ impl<'a> Reader<'a> {
     }
 }
 
-fn sign_bit_to_sign(bit: u8) -> Sign {
+const fn sign_bit_to_sign(bit: u8) -> Sign {
     if bit == 1 {
         Sign::Minus
     } else {

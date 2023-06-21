@@ -85,6 +85,7 @@ impl Term {
         crate::decoder::Reader::new(bytes).read()
     }
 
+    #[must_use]
     pub fn to_bytes(&self) -> Vec<u8> {
         todo!();
     }
