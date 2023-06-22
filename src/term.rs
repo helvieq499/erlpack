@@ -86,7 +86,7 @@ impl Term {
     }
 
     #[must_use]
-    pub fn to_bytes(&self) -> Vec<u8> {
-        todo!();
+    pub fn to_bytes(&self) -> crate::Result<Vec<u8>> {
+        crate::encoder::Encoder::new().encode(self)
     }
 }

@@ -3,11 +3,12 @@ name = "erlpack-wasm"
 version = "0.1.0"
 edition = "2021"
 description = "Parser for Erlang's term format on WebAssembly"
-repository.workspace = true
-readme.workspace = true
-license.workspace = true
+repository = "https://github.com/helvieq499/erlpack-rs"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
 keywords = ["erlang", "elixir", "etf"] # gleam too?
 categories = ["parser-implementations", "wasm"]
+
 [lib]
 crate-type = ["cdylib", "rlib"]
 

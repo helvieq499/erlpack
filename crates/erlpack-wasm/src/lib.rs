@@ -12,5 +12,5 @@ pub fn unpack(bytes: &[u8]) -> JsValue {
 #[wasm_bindgen]
 pub fn pack(value: JsValue) -> Vec<u8> {
     console_error_panic_hook::set_once();
-    value_to_term::value_to_term(value).to_bytes()
+    value_to_term::value_to_term(value).to_bytes().unwrap()
 }

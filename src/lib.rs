@@ -8,12 +8,13 @@ mod error;
 pub use error::{Error, Result};
 
 mod decoder;
+mod encoder;
 
 pub fn unpack(bytes: &[u8]) -> Result<Term> {
     Term::from_bytes(bytes)
 }
 
 #[must_use]
-pub fn pack(term: &Term) -> Vec<u8> {
+pub fn pack(term: &Term) -> Result<Vec<u8>> {
     term.to_bytes()
 }
