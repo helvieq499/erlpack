@@ -82,7 +82,7 @@ pub enum Term {
 
 impl Term {
     pub fn from_bytes(bytes: &[u8]) -> crate::Result<Self> {
-        crate::decoder::Reader::new(bytes).read()
+        crate::decoder::Decoder::new(bytes).read()
     }
 
     #[must_use]

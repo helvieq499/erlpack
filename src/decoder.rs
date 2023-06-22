@@ -4,12 +4,12 @@ use std::io::{Cursor, Read};
 
 use crate::{Error, Result, Term};
 
-pub struct Reader<'a> {
+pub struct Decoder<'a> {
     pub data: Cursor<&'a [u8]>,
     pub version: Option<u8>,
 }
 
-impl<'a> Reader<'a> {
+impl<'a> Decoder<'a> {
     pub fn new(bytes: &'a [u8]) -> Self {
         Self {
             data: Cursor::new(bytes),
